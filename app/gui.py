@@ -20,8 +20,8 @@ from graph_utils.Graph import Graph
 import os
 
 class GUI:
-    # sc = SparkContext(master="local[*]", appName="gui")
-    sc = SparkContext(master="spark://spark-master:7077", appName="gui")
+    sc = SparkContext(master="local[*]", appName="gui")
+    # sc = SparkContext(master="spark://spark-master:7077", appName="gui")
     spark = SparkSession.builder.appName("gui").getOrCreate()
 
     def __init__(self, root):
@@ -143,12 +143,12 @@ class GUI:
         pass
 
     def createInputNode(self):
-
         self.inputNode = InputFile(self.canvas)
         self.sc.addFile(self.inputNode.directory)
+
         print("File has been added")
         if self.inputNode.header_sep == None:
-            self.rdd = self.sc.textFile(SparkFiles.get(self.inputNode.fileName))
+            self.rdd = self.sc.textFile("file://" + SparkFiles.get(self.inputNode.fileName))
             df = self.spark.createDataFrame(self.rdd, StringType())
         else:
             df = self.spark.read.csv(SparkFiles.get(self.inputNode.fileName), header=True,
