@@ -6,10 +6,8 @@ The GUI is deployed as a containerized application with Docker.
 Docker (desktop) should be installed on your pc, see https://www.docker.com/products/docker-desktop.
 
 2. X Server\
-Your pc needs to have installed a X Server suite in order to display the GUI. This is by default installed at the Linux OS.
-
-For Windows you can install: https://sourceforge.net/projects/vcxsrv/
-
+Your pc needs to have installed a X Server suite in order to display the GUI. This is by default installed with Linux OS. \
+For Windows you can install: https://sourceforge.net/projects/vcxsrv/ \
 For Mac OS you can install: https://www.xquartz.org/
 
 ### Add input files
