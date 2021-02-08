@@ -14,4 +14,4 @@ For Mac OS you can install: https://www.xquartz.org/
 At the moment, only some input files are available in the Docker application. You can manually add additional input files into the app/input_file folder
 
 ### Run application
-Run ``` docker compose up ``` in the root folder of this application.
+Run ``` docker-compose up ``` in the root folder of this application.
