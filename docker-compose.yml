@@ -1,4 +1,4 @@
-version: "3.9"
+version: "3.0"
 services:
   spark-master:
     image: docker.io/bitnami/spark:3-debian-10
