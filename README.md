@@ -3,7 +3,7 @@ The GUI is deployed as a containerized application with Docker.
 
 ### Required installations
 1. Docker\
-Docker (desktop) should be installed on your pc, see https://www.docker.com/products/docker-desktop.
+Docker (desktop) should be installed on your pc, see https://runnable.com/docker/install-docker-on-windows-10 or https://www.docker.com/products/docker-desktop.
 
 2. X Server\
 Your pc needs to have installed a X Server suite in order to display the GUI. This is by default installed with Linux OS. \
