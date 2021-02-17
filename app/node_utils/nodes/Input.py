@@ -15,7 +15,7 @@ class InputFile(Node):
 
         if header:
             self.header_sep = simpledialog.askstring("Header data required", "Enter seperator of headers")
-        else: 
+        else:
             self.header_sep = None
             while self.data_tree is None:
                 try:
