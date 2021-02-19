@@ -44,37 +44,37 @@ class GUI:
         label2 = Label(self.frame, text="Configuration boxes", font=labelFont)
         label2.place(y=620, x=970)
         self.canvas.create_rectangle(10, 10, 1430, 600)
-        self.buttons["input"] = Button(self.frame, text="Input", background="light goldenrod",
+        self.buttons["input"] = Button(self.frame, text="Input", highlightbackground="light goldenrod",
                                        command=self.createInputNode, font=buttonFont)
         self.buttons["input"].place(height=40, width=120, y=660, x=350)
-        # self.buttons["combine"] = Button(self.frame, text="Combine files", highlightbackground="cyan",
+        # self.buttons["combine"] = Button(self.frame, text="Combine files", highlighthighlightbackground="cyan",
         #                                command=self.create_combiner_node)
         # self.buttons["combine"].place(height=40, width=120, y=740, x=350)
-        self.buttons["foreach"] = Button(self.frame, text="For-each", background="cornflower blue",
+        self.buttons["foreach"] = Button(self.frame, text="For-each", highlightbackground="cornflower blue",
                                          command=lambda: self.create_new_node(Map), font=buttonFont)
         self.buttons["foreach"].place(height=40, width=120, y=660, x=500)
-        self.buttons["reduce"] = Button(self.frame, text="Aggregate", background="sienna2",
+        self.buttons["reduce"] = Button(self.frame, text="Aggregate", highlightbackground="sienna2",
                                         command=lambda: self.create_new_node(ReduceByKey), font=buttonFont)
         self.buttons["reduce"].place(height=40, width=120, y=660, x=650)
-        self.buttons["filter"] = Button(self.frame, text="Filter", background="firebrick2",
+        self.buttons["filter"] = Button(self.frame, text="Filter", highlightbackground="firebrick2",
                                         command=lambda: self.create_new_node(Filter), font=buttonFont)
         self.buttons["filter"].place(height=40, width=120, y=660, x=800)
-        self.buttons["output"] = Button(self.frame, text="Output", background="SeaGreen3",
+        self.buttons["output"] = Button(self.frame, text="Output", highlightbackground="SeaGreen3",
                                         command=lambda: self.create_new_node(OutputNode), font=buttonFont)
         self.buttons["output"].place(height=40, width=120, y=740, x=725)
-        self.buttons["model"] = Button(self.frame, text="Model", background="MediumPurple1",
+        self.buttons["model"] = Button(self.frame, text="Model", highlightbackground="MediumPurple1",
                                            command=lambda: self.create_new_node(Model), font=buttonFont)
         self.buttons["model"].place(height=40, width=120, y=740, x=425)
-        self.buttons["evaluate"] = Button(self.frame, text="Evaluate", background="medium orchid",
+        self.buttons["evaluate"] = Button(self.frame, text="Evaluate", highlightbackground="medium orchid",
                                           command=lambda: self.create_new_node(Evaluator), font=buttonFont)
         self.buttons["evaluate"].place(height=40, width=120, y=740, x=575)
-        self.buttons["calculate"] = Button(self.frame, text="Calculate path", background="PaleGreen1",
+        self.buttons["calculate"] = Button(self.frame, text="Calculate path", highlightbackground="PaleGreen1",
                                            command=self.createDAG, font=buttonFont)
         self.buttons["calculate"].place(height=40, width=160, y=660, x=1000)
-        self.buttons["options"] = Button(self.frame, text="Options", background="snow3",
+        self.buttons["options"] = Button(self.frame, text="Options", highlightbackground="snow3",
                                          command=self.show_options_dialog, font=buttonFont)
         self.buttons["options"].place(height=40, width=120, y=710, x=1000)
-        self.buttons["code"] = Button(self.frame, text="Show code", background="snow3",
+        self.buttons["code"] = Button(self.frame, text="Show code", highlightbackground="snow3",
                                          command=self.show_code_dialog, font=buttonFont)
         self.buttons["code"].place(height=40, width=140, y=760, x=1000)
         # self.buttons["delete"] = Button(self.frame, text="Delete", highlightbackground="green",
