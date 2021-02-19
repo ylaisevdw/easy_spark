@@ -3,6 +3,7 @@ from DataTree import Tree
 from node_utils.Node import Node
 from tkinter import filedialog
 from tkinter import *
+from pyspark.rdd import RDD
 
 class OutputNode(Node):
     def __init__(self, canvas):
@@ -32,6 +33,9 @@ class OutputNode(Node):
 
     def get_rdd(self):
         self.rdd = self.incoming_edge.origin.get_rdd()
-        result = self.rdd.collect()
-        print(result[:10])
+        if isinstance(self.rdd, RDD):
+            result = self.rdd.collect()
+            print(result[0:3])
+        else:
+            result = self.rdd
         self.write_to_file(result)

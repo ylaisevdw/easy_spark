@@ -69,7 +69,7 @@ class ReduceByKey(Node):
         b = ttk.Button(win, text="Close", command=win.destroy)
         b.place(height=40, width=100, y=100, x=10)
         b.pack()
-    
+
     def show_code(self):
         if self.code == "":
             win = tk.Toplevel()
@@ -87,8 +87,9 @@ class ReduceByKey(Node):
 
     def set_function(self, function):
         self.function = function
-        
+
     def set_key(self, key):
+        print("key")
         path = self.incoming_edge.origin.data_tree.get_path(key)
         print(path)
         if len(path) != 1:
@@ -126,7 +127,11 @@ class ReduceByKey(Node):
         if self.function == "Count":
             self.code += "rdd.map(lambda %s: (%s, 1)).reduceByKey(lambda a,b: a+b) \n" %(self.key, self.key)
             rdd = eval("""rdd.map(lambda {}: ({}, 1)).reduceByKey(lambda a,b: a+b)""".format(self.key, self.key))
-        else:
-            raise NotImplementedError("function sum not implemented for ReduceByKey class")
+
+        elif self.function == "Sum":
+            self.code += "rdd.reduce(lambda a,b: a+b) \n"
+            rdd = eval(""" rdd.reduce(lambda a,b: + a+b) """)
+
+
         print(self.code)
         return rdd
